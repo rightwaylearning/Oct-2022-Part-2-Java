@@ -6,7 +6,7 @@ class B extends Thread{
 	public void run() {
 		System.out.println("start");
 		int n = 10/0;
-		System.out.println("end");
+		System.out.println("end >>> vishwa");
 	}
 }
 
