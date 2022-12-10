@@ -4,7 +4,7 @@ package test.com;
 class Parent{
 	
 	Parent(){
-		System.out.println("I am parent class Constructor");
+		System.out.println("I am parent class Constructor ");
 	}
 }
 
