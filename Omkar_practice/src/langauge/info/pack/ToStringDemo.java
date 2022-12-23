@@ -1,8 +1,5 @@
 package langauge.info.pack;
 
-import language.info.pack.PP;
-import language.info.pack.String;
-
 class PP{
 	int a;
 	int b;
