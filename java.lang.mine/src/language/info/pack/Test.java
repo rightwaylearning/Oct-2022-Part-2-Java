@@ -1,8 +1,5 @@
 package language.info.pack;
 
-class A {
- 
-}
 
 class Student {
 
