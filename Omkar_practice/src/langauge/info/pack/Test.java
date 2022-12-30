@@ -1,41 +1,42 @@
-package language.info.pack;
+package langauge.info.pack;
 
 
-class Student {
+class B{
+	
+}
 
+class Student{
 	int rollNumber;
 	String name;
-
-	Student(int rollNumber, String name) {
+	
+	Student(int rollNumber,String name){
 		this.rollNumber = rollNumber;
 		this.name = name;
 	}
-
 	@Override
 	public int hashCode() {
 		return this.rollNumber;
 	}
-
 }
-
 public class Test {
 
 	public static void main(String[] args) {
-
-		A a = new A();
-		A a1 = new A();
-		A a2 = a;
 		
-		System.out.println("-------------------");
-		System.out.println(a.hashCode());
-		System.out.println(a1.hashCode());
-		System.out.println(a2.hashCode());
-
-		Student s1 = new Student(10, "Alex");
-		Student s2 = new Student(11, "Bee");
-		Student s3 = new Student(12, "Lee");
-		System.out.println("-------------------");
-		System.out.println(s1.hashCode()); // 10
+		B a = new B();
+		B a1 =new B();
+		B a2 = a;
+		
+		System.out.println("-----------------------------");
+	    System.out.println(a.hashCode());
+	    System.out.println(a1.hashCode());
+	    System.out.println(a2.hashCode());
+	    
+	    Student s1 = new Student(10,"Alex");
+	    Student s2 = new Student(11,"Bee");
+	    Student s3 = new Student(12,"Lee");
+	    
+	    System.out.println("----------------------------");
+	    System.out.println(s1.hashCode()); // 10
 		System.out.println(s2.hashCode()); // 11
 		System.out.println(s3.hashCode()); // 12
 
