@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import collection_api.list.array.list.opt.Product;
+
 public class ArrayListDemo {
 
 	public static void main(String[] args) {
@@ -16,10 +18,10 @@ public class ArrayListDemo {
 	  al.add(100);  // 100 primitive >>> autoboxing >> Integer object
 	  al.add("Hello");// sString class object
 	  al.add(new Integer(100));
-	  Student s = new Student();
+	  Product s = new Product();
 	  al.add(s); 
 	  al.add(null);
-	  al.add(new Student());
+	  al.add(new Product());
 	 boolean b =  al.add(null);
 	 System.out.println(b);
 	  System.out.println(al); // toString
