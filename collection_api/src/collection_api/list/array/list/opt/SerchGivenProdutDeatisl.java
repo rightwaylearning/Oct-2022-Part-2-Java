@@ -1,6 +1,7 @@
 package collection_api.list.array.list.opt;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class SerchGivenProdutDeatisl {
 	
@@ -28,9 +29,17 @@ public class SerchGivenProdutDeatisl {
 	
 	public static Product getproduct(String productName, ArrayList<Product> list) {
 		
-		for (Product product : list) {
-			if(productName.equals(product.getProductName())) {
-				return product;
+//		for (Product product : list) {
+//			if(productName.equals(product.getProductName())) {
+//				return product;
+//			}
+//		}
+		
+		Iterator<Product> itr = list.iterator();
+		while(itr.hasNext()) {
+			Product p = itr.next();
+			if(p.getProductName().equals(productName)) {
+				return p;
 			}
 		}
 		
