@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class CrudOpt {
 
 	LinkedList<Integer> list;
-	
+
 	public CrudOpt() {
 		list = new LinkedList<>();
 		list.add(100);
@@ -15,28 +15,47 @@ public class CrudOpt {
 		list.add(700);
 		list.add(800);
 	}
-	
+
+	// here we are chceking the input object is exit or not inside linked list
 	Boolean isObjectExit(Integer obj) {
+		boolean isExist = this.list.contains(obj);
+		return isExist;
+	}
+
+	// here we are storing new object inside Linked list
+	Boolean saveObject(Integer obj) {
+		boolean b = this.list.add(obj);
+		return b;
+	}
+
+	Integer countOfGivenObject(Integer obj) {
+		Integer cnt = 0;
+		for (Integer item : list) {
+			if (item.equals(obj)) {
+				cnt++;
+			}
+		}
+
+		return cnt;
+	}
+
+	Boolean removeObject(Integer obj) {
+		return this.list.remove(obj);
+	}
+
+	void replaceObject(Integer oldObject, Integer newObject) {
+		System.out.println("old list " + this.list);
 		
-		return null;
+		int index = list.indexOf(oldObject);
+		this.list.remove(index);
+		this.list.add(index, newObject);
+		
+		System.out.println("new list " + this.list);
 	}
-	
-	// insert
-	
-	
-	// check 700 frequency  // count of 700
-	
-	
-	// delete 300
-	
-	
-	// update  7000 >> replace 701
-	
-	
+
 	public static void main(String[] args) {
-		CrudOpt c= new CrudOpt();
-		System.out.println(c.isObjectExit(500));
+		CrudOpt c = new CrudOpt();
+		c.replaceObject(700, 70);
 	}
-	
-	
+
 }
