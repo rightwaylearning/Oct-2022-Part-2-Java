@@ -21,19 +21,20 @@ public class ListIteratorDemo {
 			litr.remove();
 		}
 		
-		litr.hasNext();// boolean >> some thing is there forward
-		litr.next(); // return object & go next
-		litr.nextIndex();// index 0...1
-		
-		
-		litr.hasPrevious(); // boolean some thing is there backward
-		litr.previous(); //return object & go back
-		litr.previousIndex();
-		
-		litr.add(78); // he is adding element also
-		litr.set(23); // he is replace object which is return by next or previous
-		litr.remove(); // he can remove object which return by next()
-		
+		// 9 
+//		litr.hasNext();// boolean >> some thing is there forward
+//		litr.next(); // return object & go next
+//		litr.nextIndex();// index 0...1
+//		
+//		
+//		litr.hasPrevious(); // boolean some thing is there backward
+//		litr.previous(); //return object & go back
+//		litr.previousIndex();
+//		
+//		litr.add(78); // he is adding element also
+//		litr.set(23); // he is replace object which is return by next or previous
+//		litr.remove(); // he can remove object which return by next()
+//		
 		
 		
 	}
