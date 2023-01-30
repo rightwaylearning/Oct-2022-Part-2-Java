@@ -15,6 +15,7 @@ public class HetroObjectWithTreeSet {
 		
 		System.out.println(tree);
 		
+		System.out.println("rwl"+10+10);
 	}
 }
 
