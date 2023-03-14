@@ -11,7 +11,8 @@ public interface ICutomerService {
 	public Map<Customer, List<Product>> getAllCustomersale();
 	public Integer insertCustomerDetails(Customer customer);
 	public Customer getCustomerDeatils(Integer customerId);
-	public int deleteCustomer(Integer customerId);
-	public int updateProductRate(Integer customerId, Integer ProductId, Double discount);
+	public Integer deleteCustomer(Integer customerId);
+	public Integer deleteProduct(Integer customerId);
+	public Integer updateProductRate(Integer customerId, Integer ProductId, Double discount);
 	
 }

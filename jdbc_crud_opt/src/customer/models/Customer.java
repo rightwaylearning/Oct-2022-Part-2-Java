@@ -15,6 +15,20 @@ public class Customer {
 		this.customerName = customerName;
 		this.contactNumber = contactNumber;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Customer obj1 = (Customer)obj;
+		if(this.getCustomerName().equals(obj1.getCustomerName()) && this.getContactNumber().equals(obj1.getContactNumber())) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getCustomerName().hashCode()  + this.getContactNumber().hashCode();
+	}
 
 	public Integer getCustometId() {
 		return custometId;
