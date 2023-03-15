@@ -50,9 +50,17 @@ public class CustomerDaoImpl implements ICustomerDao {
 	}
 
 	@Override
-	public Customer getCustomerDeatils(Integer customerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultSet getCustomerDeatils(Integer customerId) {
+		ResultSet cust = null;
+		try {
+			PreparedStatement stm =con.prepareStatement("select customer_id, customer_name, contact_no from customer where customer_id = ?");
+		    stm.setInt(1, customerId);	
+			cust = stm.executeQuery();	
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return cust;
 	}
 
 	@Override

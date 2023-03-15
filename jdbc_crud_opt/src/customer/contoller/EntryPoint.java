@@ -1,5 +1,6 @@
 package customer.contoller;
 
+import customer.models.Customer;
 import customer.service.CutomerServiceImpl;
 import customer.service.ICutomerService;
 
@@ -19,6 +20,10 @@ public class EntryPoint {
 //		Integer updatedRecord  = cutomerService.updateProductRate(101,12,20.00);
 //		System.out.println("updatedRecord = "+ updatedRecord);
 		
-		System.out.println(cutomerService.getAllCustomersale());
+//		System.out.println(cutomerService.getAllCustomersale());
+		
+		Customer cust =  cutomerService.getCustomerDeatils(102);
+		System.out.println(cust);
+		
 	}
 }
