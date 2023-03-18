@@ -11,11 +11,10 @@ public class BatchProcessing {
 
 	void openAccount(List<Account> list) throws SQLException {
 		Connection con = DBConnection.getConnection();
-		PreparedStatement stm = null;
+		PreparedStatement stm = con.prepareStatement("insert into SBI values(?,?,?)");
+		
 		for (Account account : list) {
-			
 			try {
-				stm = con.prepareStatement("insert into SBI values(?,?,?)");
 				stm.setInt(1, account.getAccounTnumber());
 				stm.setString(2, account.getAccountHolderName());
 				stm.setDouble(3, account.getBalance());
@@ -23,12 +22,9 @@ public class BatchProcessing {
 			}catch (Exception e) {
 				System.out.println(e);
 			}
-			
-		 int[] arr= stm.executeBatch();
-		 for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
 		}
-		}
+		
+		int[] arr= stm.executeBatch();
 		
 	}
 }
