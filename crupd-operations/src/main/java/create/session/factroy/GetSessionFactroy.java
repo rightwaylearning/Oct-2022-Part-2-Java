@@ -1,43 +1,51 @@
 package create.session.factroy;
 
-import java.util.Properties;
-
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
-import org.hibernate.dialect.MySQL5Dialect;
+import org.hibernate.service.ServiceRegistry;
 
-import com.mysql.cj.jdbc.Driver;
+import employee.model.Employee;
 
 public class GetSessionFactroy {
 
 	public static SessionFactory getSessionFactroty() {
 		
+		// one seesion object means one connection object
+		// SessionFactroy contain pool of session objects
 		SessionFactory sessionFactory = null;
-	
-		// hibernate propeties
-//		Properties p = new Properties();
-//		p.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-//		p.put(Environment.URL,"jdbc:mysql://localhost:3306/hibenate_db");
-//		p.put(Environment.USER, "root");
-//		p.put(Environment.PASS, "root");
-//		p.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
-//	    p.put(Environment.SHOW_SQL,"true");
-//	    
-//	    
-//	    Configuration config = new Configuration();
-//	    config.setProperties(p);
 		
 		Configuration config = new Configuration();
+		// connection properties
 		config.setProperty(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
 		config.setProperty(Environment.URL,"jdbc:mysql://localhost:3306/hibenate_db");
 		config.setProperty(Environment.USER, "root");
 		config.setProperty(Environment.PASS, "root");
+		
+		// hibernate properties
 		config.setProperty(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 		config.setProperty(Environment.SHOW_SQL,"true");
 		
+		// mapping classes
+		config.addAnnotatedClass(Employee.class);
+		
+		//-----------------------------------------------------
 		
 		
+		
+//		StandardServiceRegistryBuilder builder= new StandardServiceRegistryBuilder();
+//		
+//		StandardServiceRegistryBuilder builder1 = builder.applySettings(config.getProperties());
+//		
+//		ServiceRegistry serviceRegistry = builder1.build();
+		
+		
+		
+		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
+		
+		
+		sessionFactory = config.buildSessionFactory(serviceRegistry);
 		
 		
 		return sessionFactory;
