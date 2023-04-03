@@ -32,6 +32,8 @@ public class DoOperation {
 		
 		Employee e1= new Employee(12, "Krishna" ,"Manager", 270865.00);
 		session.save(e1);
+		
+		
 		tx.commit();
 		
 		session.close();
