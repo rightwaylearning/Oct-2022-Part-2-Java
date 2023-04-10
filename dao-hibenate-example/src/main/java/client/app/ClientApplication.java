@@ -6,15 +6,15 @@ import movie.model.Movie;
 
 public class ClientApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		MovieOpeationsDao movieOpeationsDao = new MovieOpeationsDaoImpl();
 
 		// save object
-		// Movie m= new Movie(101, "two state", "Dharma production", "karan Johar",
-		// "Arjun kapur,aliya bhatt");
-		// Integer id = movieOpeationsDao.save(m);
-		// System.out.println(id);
+		 Movie m= new Movie(1021, "pushpa", "pushpa south india production", "alu arjun",
+		 "Alu Arjun",12345678.00,"06/06/2022");
+		 Integer id = movieOpeationsDao.save(m);
+		 System.out.println(id);
 
 //		Movie m = new Movie(102, "Pathan", "red chilli production", "srk", "srk, dipika");
 //		Integer id = movieOpeationsDao.save(m);
@@ -23,7 +23,7 @@ public class ClientApplication {
 		
 		// read
 		
-//		Movie m =  movieOpeationsDao.read(101);
+//		Movie m =  movieOpeationsDao.read(108);
 //		System.out.println(m);
 
 		
@@ -38,10 +38,10 @@ public class ClientApplication {
 //		}
 		
 		// delete :- first check that object is exit in db if yes then delete it
-		Movie m =  movieOpeationsDao.read(102);
-		if(m!=null) {
-			movieOpeationsDao.delete(m);
-		}
+//		Movie m =  movieOpeationsDao.read(102);
+//		if(m!=null) {
+//			movieOpeationsDao.delete(m);
+//		}
 		
 		
 	}

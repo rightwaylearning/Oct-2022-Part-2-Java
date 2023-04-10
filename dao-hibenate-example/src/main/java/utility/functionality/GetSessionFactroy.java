@@ -1,5 +1,9 @@
 package utility.functionality;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Properties;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -10,9 +14,9 @@ import movie.model.Movie;
 
 public class GetSessionFactroy {
 
-	public static SessionFactory getSessionfactroy() {
+	public static SessionFactory getSessionfactroy() throws Exception{
 		
-		SessionFactory sessionFactory = null;
+		 SessionFactory sessionFactory = null;
 		
          Configuration 	 configuration = new Configuration();
          
@@ -25,6 +29,19 @@ public class GetSessionFactroy {
          // hibernate properties
          configuration.setProperty(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 		 configuration.setProperty(Environment.SHOW_SQL, "true");
+		 
+		 // validate 
+		// configuration.setProperty(Environment.HBM2DDL_AUTO, "validate");
+		 
+		 // create
+		//  configuration.setProperty(Environment.HBM2DDL_AUTO, "create");
+		 
+		 // create-drop
+		// configuration.setProperty(Environment.HBM2DDL_AUTO, "create-drop");
+		 
+		// update
+		configuration.setProperty(Environment.HBM2DDL_AUTO, "update");
+		 
 		 
 		 // Entity class need to load
 		 
