@@ -25,15 +25,23 @@ public class Movie {
 	@Column(name ="casting")
 	private String movieCasting;
 	
-	public Movie() {}
+	@Column(name="bx_collection")
+	Double income;
+	
+	@Column(name = "release_date")
+	private String date;
+	public Movie() {
+	}
 
-	public Movie(Integer movieId, String movieName, String movieProduction, String movieDirector, String movieCasting) {
+	public Movie(Integer movieId, String movieName, String movieProduction, String movieDirector, String movieCasting,Double income,String date) {
 		super();
 		this.movieId = movieId;
 		this.movieName = movieName;
 		this.movieProduction = movieProduction;
 		this.movieDirector = movieDirector;
 		this.movieCasting = movieCasting;
+		this.income = income;
+		this.date= date;
 	}
 
 	public Integer getMovieId() {
@@ -76,10 +84,27 @@ public class Movie {
 		this.movieCasting = movieCasting;
 	}
 
+	public Double getIncome() {
+		return income;
+	}
+
+	public void setIncome(Double income) {
+		this.income = income;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	@Override
 	public String toString() {
 		return "Movie [movieId=" + movieId + ", movieName=" + movieName + ", movieProduction=" + movieProduction
-				+ ", movieDirector=" + movieDirector + ", movieCasting=" + movieCasting + "]";
+				+ ", movieDirector=" + movieDirector + ", movieCasting=" + movieCasting + ", income=" + income
+				+ ", date=" + date + "]";
 	}
 
 }

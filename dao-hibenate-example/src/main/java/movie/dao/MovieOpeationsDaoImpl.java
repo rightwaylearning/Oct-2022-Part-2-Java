@@ -11,7 +11,7 @@ public class MovieOpeationsDaoImpl implements MovieOpeationsDao {
 	
 	private SessionFactory  sessionFactory = null;
 	
-	public MovieOpeationsDaoImpl() {
+	public MovieOpeationsDaoImpl() throws Exception{
 		this.sessionFactory = GetSessionFactroy.getSessionfactroy();
 	}
 
