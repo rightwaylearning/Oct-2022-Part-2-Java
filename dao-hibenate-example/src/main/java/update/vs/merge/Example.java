@@ -16,7 +16,7 @@ public class Example {
 		Session s1= GetSessionFactroy.getSessionfactroy().openSession();
 		Movie m = s1.get(Movie.class, 108);
 		Transaction tx = s1.beginTransaction();
-         s1.merge(duplicate);      		
+         s1.update(duplicate);      		
 		tx.commit();
 		s1.close();
 	}
