@@ -13,7 +13,7 @@ public class Movie {
 	
 	@Id
 	@Column(name ="movie_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.AUTO )
 	private Integer movieId;
 	
 	@Column(name ="movie_name")

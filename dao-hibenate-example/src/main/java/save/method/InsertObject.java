@@ -11,7 +11,7 @@ public class InsertObject {
 	public static void main(String[] args)  throws Exception{
 		
 		Movie m = new Movie();
-		m.setMovieName("RRR");
+		m.setMovieName("RRRRRRR");
 		m.setMovieCasting("Ramcharan, Ramarao, Rajmolu");
 		m.setMovieProduction("Raja moli");
 		m.setMovieDirector("raja moli");
