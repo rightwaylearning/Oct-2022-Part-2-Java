@@ -7,6 +7,8 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 import customer.servicescustomer.portal.models.Customer;
+import customer.servicescustomer.portal.models.Employee;
+import customer.servicescustomer.portal.models.Test;
 
 
 public class GetSessionFactroy {
@@ -30,6 +32,8 @@ public class GetSessionFactroy {
 		
 		// mapping classes
 		config.addAnnotatedClass(Customer.class);
+		config.addAnnotatedClass(Employee.class);
+		config.addAnnotatedClass(Test.class);
 		
 	
 		
