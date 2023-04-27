@@ -6,6 +6,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import employeemodel.Employee;
 import movie.model.Movie;
 
 public class GetsessionFactory {
@@ -28,6 +29,7 @@ public class GetsessionFactory {
 
 		// entity class need to load
 		configuration.addAnnotatedClass(Movie.class);
+		configuration.addAnnotatedClass(Employee.class);
 
 		StandardServiceRegistryBuilder ssrg = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties());

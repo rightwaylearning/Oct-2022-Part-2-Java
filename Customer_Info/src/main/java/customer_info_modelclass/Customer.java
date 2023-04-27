@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
-
+// swapnil
 @Entity
 @Table(name = "customer")
 public class Customer {

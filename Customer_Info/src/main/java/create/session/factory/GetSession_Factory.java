@@ -7,6 +7,8 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 import customer_info_modelclass.Customer;
+import customer_info_modelclass.Employee;
+
 
 
 
@@ -29,6 +31,8 @@ public class GetSession_Factory {
 
 		// entity class need to load
 		configuration.addAnnotatedClass(Customer.class);
+		configuration.addAnnotatedClass(Employee.class);
+		
 
 		StandardServiceRegistryBuilder ssrg = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties());
