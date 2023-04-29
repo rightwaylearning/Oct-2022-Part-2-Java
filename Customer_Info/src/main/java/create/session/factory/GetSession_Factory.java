@@ -1,4 +1,4 @@
-package utility_functionatily;
+package create.session.factory;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -6,11 +6,13 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import employeemodel.Employee;
-import movie.model.Movie;
+import customer_info_modelclass.Customer;
+import customer_info_modelclass.Employee;
 
-public class GetsessionFactory {
 
+
+
+public class GetSession_Factory {
 	public static SessionFactory getsessionfactory() {
 		SessionFactory sessionFactory = null;
 
@@ -28,8 +30,9 @@ public class GetsessionFactory {
 		configuration.setProperty(Environment.SHOW_SQL, "true");
 
 		// entity class need to load
-		configuration.addAnnotatedClass(Movie.class);
+		configuration.addAnnotatedClass(Customer.class);
 		configuration.addAnnotatedClass(Employee.class);
+		
 
 		StandardServiceRegistryBuilder ssrg = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties());
