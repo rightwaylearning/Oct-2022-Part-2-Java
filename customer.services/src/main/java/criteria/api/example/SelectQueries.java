@@ -101,20 +101,30 @@ public class SelectQueries {
 		// group by 
 		
       
-		Session session = GetSessionFactroy.getSessionFactroty().openSession();
-		Criteria ctr = session.createCriteria(Employee.class);
-
-		Projection p1 = Projections.groupProperty("department");
-		Projection p2 = Projections.sum("salary");
+//		Session session = GetSessionFactroy.getSessionFactroty().openSession();
+//		Criteria ctr = session.createCriteria(Employee.class);
+//
+//		Projection p1 = Projections.groupProperty("department");
+//		Projection p2 = Projections.sum("salary");
+//		
+//		ProjectionList plist = Projections.projectionList();
+//		plist.add(p1); plist.add(p2);
+//		ctr.setProjection(plist);
+//		
+//		List<Object[]> list = ctr.list();
+//		 list.stream().forEach(x->{
+//		  System.out.println(x[0]+"  "+x[1]);
+//	  });
 		
-		ProjectionList plist = Projections.projectionList();
-		plist.add(p1); plist.add(p2);
-		ctr.setProjection(plist);
 		
-		List<Object[]> list = ctr.list();
-		 list.stream().forEach(x->{
-		  System.out.println(x[0]+"  "+x[1]);
-	  });
+		  Session session= GetSessionFactroy.getSessionFactroty().openSession();
+		  Criteria ctr = session.createCriteria(Employee.class);
+		  int page = 1; // 0 mean's first page >> from record 1
+		  ctr.setFirstResult(page*10);
+		  ctr.setMaxResults(10);
+		  List<Employee> list = ctr.list() ;
+		  session.close();
+		  list.stream().forEach(System.out::println);
 		
 	}
 }

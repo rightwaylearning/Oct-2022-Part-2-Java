@@ -4,10 +4,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+
+
+@NamedQueries({
+	
+	@NamedQuery(
+       name = "customer_name",
+       query = "select customerFirstName, customerLastName from Customer c where  c.customerId =:id" 
+    )
+})
 @Entity
 @Table(name = "customer")
 public class Customer {

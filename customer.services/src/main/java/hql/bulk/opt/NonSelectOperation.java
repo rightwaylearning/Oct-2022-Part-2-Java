@@ -1,5 +1,8 @@
 package hql.bulk.opt;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -37,10 +40,11 @@ public class NonSelectOperation {
 		Session session = GetSessionFactroy.getSessionFactroty().openSession();
 		Query<Employee> query = session.createQuery("insert into Employee(employeeId,employeeName,department,salary) select id,name,dname,salary from Test");
 		Transaction tx = session.beginTransaction();
+		 System.out.println(tx);
+		 System.out.println();
 		int rows  =  query.executeUpdate();
 		tx.commit();
 		session.close();
-
 		
 		
 		

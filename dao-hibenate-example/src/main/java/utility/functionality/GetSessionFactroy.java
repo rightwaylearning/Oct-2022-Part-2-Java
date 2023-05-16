@@ -1,16 +1,24 @@
 package utility.functionality;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.Properties;
-
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import inheritance.mapping.table_per_class_example.Card;
+import inheritance.mapping.table_per_class_example.Cheque;
+import inheritance.mapping.table_per_class_example.Payment;
+import inheritance.mapping.table_per_concrete_class_example.Card1;
+import inheritance.mapping.table_per_concrete_class_example.Cheque1;
+import inheritance.mapping.table_per_concrete_class_example.Payment1;
+import inheritance.mapping.table_per_sub_class_example.Card11;
+import inheritance.mapping.table_per_sub_class_example.Cheque11;
+import inheritance.mapping.table_per_sub_class_example.Payment11;
+import inheritance_mapping_has_a_reln.Employee;
 import movie.model.Movie;
+import one_to_many_rel.Doctor;
+import one_to_many_rel.Patient;
 
 public class GetSessionFactroy {
 
@@ -46,7 +54,22 @@ public class GetSessionFactroy {
 		 // Entity class need to load
 		 
 		 configuration.addAnnotatedClass(Movie.class);
+		 configuration.addAnnotatedClass(Payment.class);
+		 configuration.addAnnotatedClass(Card.class);
+		 configuration.addAnnotatedClass(Cheque.class);
 		 
+		 configuration.addAnnotatedClass(Payment1.class);
+		 configuration.addAnnotatedClass(Card1.class);
+		 configuration.addAnnotatedClass(Cheque1.class);
+		 
+		 configuration.addAnnotatedClass(Payment11.class);
+		 configuration.addAnnotatedClass(Card11.class);
+		 configuration.addAnnotatedClass(Cheque11.class);
+		 configuration.addAnnotatedClass(Employee.class);
+		 
+		 configuration.addAnnotatedClass(Doctor.class);
+
+		 configuration.addAnnotatedClass(Patient.class);
 		 
 		 StandardServiceRegistryBuilder ssrg = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 		 

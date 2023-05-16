@@ -20,17 +20,18 @@ public class GetSessionFactroy {
 		SessionFactory sessionFactory = null;
 		
 		Configuration config = new Configuration();
-		// connection properties
+	
+		// here we configured connection properties
 		config.setProperty(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
 		config.setProperty(Environment.URL,"jdbc:mysql://localhost:3306/hibenate_db");
 		config.setProperty(Environment.USER, "root");
 		config.setProperty(Environment.PASS, "root");
 		
-		// hibernate properties
+		// here we configured hibernate properties
 		config.setProperty(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 		config.setProperty(Environment.SHOW_SQL,"true");
 		
-		// mapping classes
+		//here we configured mapping classes
 		config.addAnnotatedClass(Customer.class);
 		config.addAnnotatedClass(Employee.class);
 		config.addAnnotatedClass(Test.class);
