@@ -26,7 +26,7 @@ public class Doctor {
 	private String qulification;
 	
 	@OneToMany(targetEntity = Patient.class, 
-			   fetch = FetchType.LAZY,
+			   fetch = FetchType.EAGER,
 			   cascade = CascadeType.ALL,
 			   orphanRemoval = false
 			 )
