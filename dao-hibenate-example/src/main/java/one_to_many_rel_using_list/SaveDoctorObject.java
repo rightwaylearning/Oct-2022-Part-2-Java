@@ -1,9 +1,7 @@
-package one_to_many_rel;
+package one_to_many_rel_using_list;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -17,13 +15,9 @@ public class SaveDoctorObject {
 		Session session = GetSessionFactroy.getSessionfactroy().openSession();
 		Transaction tx = session.beginTransaction();
 		
-		Patient p1= new Patient(111, "Madhu", 30);
-		Patient p2= new Patient(222, "Sunil", 34);
-		Patient p3= new Patient(333, "Sindhu", 32);
-		List<Patient> set = new ArrayList<>();
-		set.add(p1);set.add(p2);set.add(p3);
 		
-		Doctor dr = new Doctor(102, "Mr Mahidra", "MBBS(MD)", set);
+		
+		Doctor dr = new Doctor(101, "Mr Sharad", "MBBS", null);
 		
 		
 		Integer i = (Integer) session.save(dr);

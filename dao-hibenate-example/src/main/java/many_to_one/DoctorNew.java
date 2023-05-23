@@ -1,4 +1,4 @@
-package one_to_many_rel;
+package many_to_one;
 
 import java.util.List;
 import java.util.Set;
@@ -13,8 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="doctor_new")
-public class Doctor {
+@Table(name="doctor_new1")
+public class DoctorNew {
 
 	@Id
 	@Column(name = "dr_no")
@@ -26,23 +26,13 @@ public class Doctor {
 	@Column(name = "dr_qualification")
 	private String qulification;
 	
-	@OneToMany(targetEntity = Patient.class, 
-			   fetch = FetchType.EAGER,
-			   cascade = CascadeType.REMOVE,
-			   orphanRemoval = false
-			 )
-	@JoinColumn(name = "fk_drNo", referencedColumnName = "dr_no")
-	private List<Patient> set;
-	
-	public Doctor() {}
-	
+	public DoctorNew() {}
 
-	public Doctor(Integer drNo, String name, String qulification,List<Patient> set) {
+	public DoctorNew(Integer drNo, String name, String qulification) {
 		super();
 		this.drNo = drNo;
 		this.name = name;
 		this.qulification = qulification;
-		this.set = set;
 	}
 
 
@@ -72,19 +62,9 @@ public class Doctor {
 	}
 
 
-	public List<Patient> getSet() {
-		return set;
-	}
-
-
-	public void setSet(List<Patient> set) {
-		this.set = set;
-	}
-
-
 	@Override
 	public String toString() {
-		return "Doctor [drNo=" + drNo + ", name=" + name + ", qulification=" + qulification + ", set=" + set + "]";
+		return "Doctor [drNo=" + drNo + ", name=" + name + ", qulification=" + qulification + "]";
 	}
 	
 	

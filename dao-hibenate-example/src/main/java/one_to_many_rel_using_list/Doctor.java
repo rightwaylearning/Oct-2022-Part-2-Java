@@ -1,4 +1,4 @@
-package one_to_many_rel;
+package one_to_many_rel_using_list;
 
 import java.util.List;
 import java.util.Set;
@@ -10,10 +10,11 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="doctor_new")
+@Table
 public class Doctor {
 
 	@Id
@@ -28,10 +29,10 @@ public class Doctor {
 	
 	@OneToMany(targetEntity = Patient.class, 
 			   fetch = FetchType.EAGER,
-			   cascade = CascadeType.REMOVE,
-			   orphanRemoval = false
+			   cascade = CascadeType.REMOVE
 			 )
 	@JoinColumn(name = "fk_drNo", referencedColumnName = "dr_no")
+	@OrderColumn(name="list_index")
 	private List<Patient> set;
 	
 	public Doctor() {}

@@ -1,4 +1,4 @@
-package one_to_many_rel;
+package one_to_many_rel_using_list;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "patient_new")
+@Table(name = "patient")
 public class Patient {
 
 	@Id
