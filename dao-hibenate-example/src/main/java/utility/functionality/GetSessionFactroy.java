@@ -6,10 +6,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import many_to_one.DoctorNew;
-import many_to_one.PatientNew;
-import one_to_many_rel.Doctor;
-import one_to_many_rel.Patient;
+import one.to.one.Passport;
+import one.to.one.Person;
+import one_to_many_bi_directional.Doctor;
+import one_to_many_bi_directional.Patient;
 
 public class GetSessionFactroy {
 
@@ -21,7 +21,7 @@ public class GetSessionFactroy {
          
          // connection property
          configuration.setProperty(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-         configuration.setProperty(Environment.URL,"jdbc:mysql://localhost:3306/mapping");
+         configuration.setProperty(Environment.URL,"jdbc:mysql://localhost:3306/mine");
          configuration.setProperty(Environment.USER,"root");
          configuration.setProperty(Environment.PASS,"root");
          
@@ -65,14 +65,19 @@ public class GetSessionFactroy {
 //		 configuration.addAnnotatedClass(Doctor.class);
 //		 configuration.addAnnotatedClass(Patient.class);
 		
+//		configuration.addAnnotatedClass(Doctor.class);
+//		configuration.addAnnotatedClass(Patient.class);
+//		
+//		configuration.addAnnotatedClass(DoctorNew.class);
+//		configuration.addAnnotatedClass(PatientNew.class);
+		
+		
+		
+		
 		configuration.addAnnotatedClass(Doctor.class);
 		configuration.addAnnotatedClass(Patient.class);
-		
-		configuration.addAnnotatedClass(DoctorNew.class);
-		configuration.addAnnotatedClass(PatientNew.class);
-		
-		
-		
+		configuration.addAnnotatedClass(Person.class);
+		configuration.addAnnotatedClass(Passport.class);
 		 
 		 
 		 StandardServiceRegistryBuilder ssrg = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
