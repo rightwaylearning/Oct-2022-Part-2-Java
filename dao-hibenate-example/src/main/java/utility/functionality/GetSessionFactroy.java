@@ -6,6 +6,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import many.to.many.Author;
+import many.to.many.Book;
 import one.to.one.Passport;
 import one.to.one.Person;
 import one_to_many_bi_directional.Doctor;
@@ -74,10 +76,12 @@ public class GetSessionFactroy {
 		
 		
 		
-		configuration.addAnnotatedClass(Doctor.class);
-		configuration.addAnnotatedClass(Patient.class);
-		configuration.addAnnotatedClass(Person.class);
-		configuration.addAnnotatedClass(Passport.class);
+//		configuration.addAnnotatedClass(Doctor.class);
+//		configuration.addAnnotatedClass(Patient.class);
+//		configuration.addAnnotatedClass(Person.class);
+//		configuration.addAnnotatedClass(Passport.class);
+		configuration.addAnnotatedClass(one_to_many_rel.Doctor.class);
+		configuration.addAnnotatedClass(one_to_many_rel.Patient.class);
 		 
 		 
 		 StandardServiceRegistryBuilder ssrg = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());

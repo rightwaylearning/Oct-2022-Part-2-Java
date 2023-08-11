@@ -15,7 +15,7 @@ public class Passport {
 
 	@Id
 	@Column(name = "passport_no")
-	private String passportNumber;
+	private Integer passportNumber;
 	
 	@Column(name = "from_date")
 	private String fromDate;
@@ -36,11 +36,11 @@ public class Passport {
 			)
 	private Person person;
 
-	public String getPassportNumber() {
+	public Integer getPassportNumber() {
 		return passportNumber;
 	}
 
-	public void setPassportNumber(String passportNumber) {
+	public void setPassportNumber(Integer passportNumber) {
 		this.passportNumber = passportNumber;
 	}
 

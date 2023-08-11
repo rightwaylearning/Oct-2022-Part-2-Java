@@ -12,8 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+
+
 @Entity
-@Table(name="doctor_new")
+@Table(name="doctor")
 public class Doctor {
 
 	@Id
@@ -28,10 +33,10 @@ public class Doctor {
 	
 	@OneToMany(targetEntity = Patient.class, 
 			   fetch = FetchType.EAGER,
-			   cascade = CascadeType.REMOVE,
-			   orphanRemoval = false
+			   cascade = CascadeType.ALL
 			 )
 	@JoinColumn(name = "fk_drNo", referencedColumnName = "dr_no")
+	@Fetch(FetchMode.SUBSELECT)
 	private List<Patient> set;
 	
 	public Doctor() {}

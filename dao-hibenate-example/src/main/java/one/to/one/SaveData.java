@@ -17,7 +17,7 @@ public class SaveData {
 		Person p = new Person(111, "Akash Madhawal", "Uterakhand");
 
 		Passport pass = new Passport();
-		pass.setPassportNumber("zz456789");
+		pass.setPassportNumber(787878);
 		pass.setFromDate("25-05-2023");
 		pass.setToDate("24-05-2033");
 		pass.setPerson(p);
